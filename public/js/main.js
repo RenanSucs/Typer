@@ -7,7 +7,6 @@ $(function(){
     inicializaCronometro();
     inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
-    removeLinhaExistente()
 });
 
 function atualizaTamanhoFrase(){

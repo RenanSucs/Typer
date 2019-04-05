@@ -1,6 +1,6 @@
 function inserePLacar(){
     var corpoTabela = $(".placar").find("tbody");
-    var usuario = "seu-nome";
+    var usuario = "Renan Lindão";
     var numPalavra = $(".contador-palavras").text();
     
     var linha = novaLinha(numPalavra, usuario);
@@ -32,11 +32,4 @@ function novaLinha(numPalavra, usuario){
 function removerLinha(){
     event.preventDefault();
     $(this).parent().parent().remove();
-};
-
-function removeLinhaExistente(){
-    var removeLinha = $(".botao-remover");
-    removeLinha.click(function(){
-        removeLinha.parent().parent().remove();
-    });
 };
