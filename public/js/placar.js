@@ -7,6 +7,9 @@ function inserePLacar(){
     linha.find(".botao-remover").click(removerLinha);
 
     corpoTabela.append(linha);
+
+    $(".placar").slideDown(500);
+    scrollPlacar();
 };
 
 function novaLinha(numPalavra, usuario){
@@ -31,5 +34,24 @@ function novaLinha(numPalavra, usuario){
 
 function removerLinha(){
     event.preventDefault();
-    $(this).parent().parent().remove();
+    var linha = $(this).parent().parent();
+    linha.fadeOut(1000);
+    setTimeout(function(){
+        linha.remove();
+    },1000);
 };
+
+$("#botao-placar").click(mostraPlacar);
+
+function mostraPlacar(){
+    $(".placar").stop().slideToggle(600);
+}
+
+function scrollPlacar() {
+    var posicaoPlacar = $(".placar").offset().top;
+
+    $("html").animate(
+    {
+        scrollTop: posicaoPlacar + "px"
+    }, 1000);
+}

@@ -30,8 +30,8 @@ function inicializaContadores(){
 };
 
 function inicializaCronometro(){
-    var tempoRestante = $(".tempo-digitacao").text();
     campo.one("focus", function(){
+        var tempoRestante = $(".tempo-digitacao").text();
         $("#botao-reiniciar").attr("disabled", true);
         var cronometroID = setInterval(function(){
             tempoRestante--;
@@ -52,8 +52,8 @@ function finalizaJogo(){
 };
 
 function inicializaMarcadores(){
-    var frase = $(".frase").text();
     campo.on("input", function(){
+        var frase = $(".frase").text();
         var digitado = campo.val();
         var comparavel = frase.substr(0 , digitado.length);
         if(digitado == comparavel){
@@ -66,15 +66,6 @@ function inicializaMarcadores(){
     });
 };
 
-/* startsWith =  função do ECMA Script 6 que compara a string da mesma forma como fizemos no inicializaMarcadores()
-
-var digitouCorreto = frase.startsWith(digitado);
-if(digitouCorreto) {
- campo.addClass("borda-verde");
-} else {
- campo.addClass("borda-vermelha");
-}*/
-
 function reiniciaJogo(){
     campo.attr("disabled", false);
     campo.val("");
@@ -86,4 +77,19 @@ function reiniciaJogo(){
     campo.removeClass("borda-verde");
     campo.removeClass("borda-vermelha");
 };
+
+function atualizaTempoInicial(tempo){
+    tempoInicial = tempo;
+    $(".tempo-digitacao").text(tempo);
+}
+
+
+/* startsWith =  função do ECMA Script 6 que compara a string da mesma forma como fizemos no inicializaMarcadores()
+
+var digitouCorreto = frase.startsWith(digitado);
+if(digitouCorreto) {
+ campo.addClass("borda-verde");
+} else {
+ campo.addClass("borda-vermelha");
+}*/
 
