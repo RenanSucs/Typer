@@ -31,3 +31,16 @@
 body{
     overflow-y: scroll;
 }
+
+#erro{
+    display: none;
+    color: red;
+}
+
+#spinner{
+    display: none;
+}
+
+#frase-id{
+    width: 40px;
+}
